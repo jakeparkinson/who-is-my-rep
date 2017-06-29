@@ -7,10 +7,10 @@ import {Grid, Row} from 'react-bootstrap';
 
 class Results extends Component {
     render() {
-        let {representatives} = this.props;
+        let {representatives, loading} = this.props;
          return (
             <Grid fluid={true}>
-                {representatives.length > 0 &&
+                {representatives.length > 0 && !loading &&
                 <Row>
                     <List />
                     <Info />

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Col, Grid, Row } from 'react-bootstrap';
 import {setSelectedRepresentative} from '../../redux/mainActions';
+import './list.css';
 
 class List extends Component {
 
@@ -15,11 +16,11 @@ class List extends Component {
         const {searchBy, representatives} = this.props;
         return (
             <Col md={6}>
-                <div> 
-                    List / {searchBy}
+                <div className="rep-app-list-header"> 
+                    List / <span>{searchBy}</span>
                 </div>
-                <Grid>
-                    <Row>
+                <Grid fluid={true}>
+                    <Row className="rep-app-list-row-header">
                         <Col sm={6}>
                         Name
                         </Col>
@@ -29,7 +30,7 @@ class List extends Component {
                     </Row>
                     {representatives.map((representative) => {
                         return (
-                            <Row key={representative.name} onClick={() => this.selectRepresentative(representative)}>
+                            <Row className="rep-app-list-row" key={representative.name} onClick={() => this.selectRepresentative(representative)}>
                                 <Col sm={6}>
                                 {representative.name}
                                 </Col>
@@ -47,14 +48,12 @@ class List extends Component {
 
 List.propTypes = {
     dispatch: PropTypes.func,
-    loading: PropTypes.bool,
     searchBy: PropTypes.string,
     representatives: PropTypes.array
 };
 
 function mapStateToProps(state) {
     return {
-        loading: state.main.loading,
         searchBy: state.main.searchBy,
         representatives: state.main.representatives
     };

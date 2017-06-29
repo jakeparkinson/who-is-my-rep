@@ -1,0 +1,30 @@
+.rep-app-list-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16pt;
+    color: #8c8c8c;
+    font-weight: lighter;
+}
+
+.rep-app-list-header span{
+    color: #47a5f6;
+}
+
+.rep-app-list-row-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e8e8e8;
+    color: #8c8c8c;
+}
+
+.rep-app-list-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.rep-app-list-row:hover {
+    cursor: pointer;
+    background-color: #47a5f6;
+    color: white;
+}

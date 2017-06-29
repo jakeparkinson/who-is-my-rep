@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Col } from 'react-bootstrap';
+import { Col} from 'react-bootstrap';
 import * as _ from 'lodash';
+import '../list/list.css';
+import './info.css';
 
 class Info extends Component {
     render() {
@@ -12,26 +14,23 @@ class Info extends Component {
         let lastName = names[names.length - 1];
         return (
             <Col md={6}>
-                Info
-                {firstName}
-                {lastName}
-                {selectedRepresentative.district}
-                {selectedRepresentative.phone}
-                {selectedRepresentative.office}
+                <div className="rep-app-list-header">Info</div>
+                <div className="rep-app-info-row">{firstName || 'First Name'}</div>
+                <div className="rep-app-info-row">{lastName || 'Last Name'}</div>
+                <div className="rep-app-info-row">{selectedRepresentative.district || 'District'}</div>
+                <div className="rep-app-info-row">{selectedRepresentative.phone || 'Phone'}</div>
+                <div className="rep-app-info-row">{selectedRepresentative.office || 'Office'}</div>
             </Col>
         );
     }
 }
 
 Info.propTypes = {
-    dispatch: PropTypes.func,
-    loading: PropTypes.bool,
     selectedRepresentative: PropTypes.object
 };
 
 function mapStateToProps(state) {
     return {
-        loading: state.main.loading,
         selectedRepresentative: state.main.selectedRepresentative
     };
 }
