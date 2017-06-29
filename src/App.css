@@ -1,0 +1,12 @@
+.rep-app {
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.rep-app-header {
+    color: #47a5f6;
+    font-weight: bold;
+    font-size: 18pt;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #D3D3D3;
+}
